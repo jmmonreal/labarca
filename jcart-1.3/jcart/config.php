@@ -24,6 +24,8 @@ $config['item']['qty']            = 'my-item-qty';    // Item quantity
 $config['item']['url']            = 'my-item-url';    // Item URL (optional)
 $config['item']['add']            = 'my-add-button';    // Add to cart button
 
+		
+
 // Your PayPal secure merchant ID
 // Found here: https://www.paypal.com/webapps/customerprofile/summary.view
 $config['paypal']['id']           = 'seller_1282188508_biz@conceptlogic.com';

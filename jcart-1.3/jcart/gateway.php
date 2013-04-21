@@ -7,6 +7,9 @@
 
 // Include jcart before session start
 include_once('jcart.php');
+echo '<pre>';
+echo print_r($jcart->get_contents());
+echo '</pre>';
 
 $config = $jcart->config;
 

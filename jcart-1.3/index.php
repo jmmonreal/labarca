@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 // jCart v1.3
 // http://conceptlogic.com/jcart/
 

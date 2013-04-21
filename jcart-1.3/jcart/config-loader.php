@@ -29,5 +29,6 @@ if (!$config['text']['checkoutError']) $config['text']['checkoutError']   = 'You
 if ($_GET['ajax'] == 'true') {
 	header('Content-type: application/json; charset=utf-8');
 	echo json_encode($config);
+
 }
 ?>
