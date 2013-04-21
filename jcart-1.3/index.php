@@ -29,7 +29,10 @@ session_start();
 			<h2>Demo Store</h2>
 
 			<div id="sidebar">
-				<div id="jcart"><?php $jcart->display_cart();?></div>
+				<form method='post' action='confirma.php'>
+					<div id="jcart"><?php $jcart->display_cart();?></div>
+					<div><input type="submit" value="checkout"/></div>
+			    </form>
 			</div>
 
 			<div id="content">

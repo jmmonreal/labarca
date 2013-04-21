@@ -1,0 +1,58 @@
+.container
+{
+	margin:0 auto;
+	position: relative;
+	text-align: center;
+	width: 900px;
+	
+}
+.table
+{
+	width: 100%;
+	
+	
+	margin:0 auto;
+	position: relative;
+}
+.fil
+{
+	width: 100%;
+	text-align: center;
+}
+.col2
+{	
+	display: inline-block;
+	width: 48%;
+	height: 50px;
+	border: solid 1px #000000;
+	text-align: left;
+	padding-left:8px; 
+}
+
+.cen
+{
+	text-align: center;
+}
+
+.vat
+{
+	vertical-align: top;
+}
+
+.btnCopy
+{
+
+	border: #000000 1px dotted;
+	background-color: #cccccc;
+	cursor: pointer;
+}
+
+.tableFac
+{
+	width: 100%;
+	
+	
+	margin:0 auto;
+	position: relative;
+	display:none;
+}

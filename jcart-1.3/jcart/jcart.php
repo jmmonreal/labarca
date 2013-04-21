@@ -188,6 +188,9 @@ class Jcart {
 		$this->urls      = array();
 		$this->subtotal  = 0;
 		$this->itemCount = 0;
+
+		header('Location: index.php');
+
 	}
 
 	/**
@@ -405,8 +408,12 @@ class Jcart {
 
 			// Trim trailing slash if necessary
 			$path = rtrim($path, '/');
+           
+			if($_SERVER["REQUEST_URI"]=="index.php")
+			{
 
-			$checkout = $path . '/gateway.php';
+				$checkout = $path . '/confirma.php';
+		    }
 		}
 
 		// Default input type
@@ -494,7 +501,7 @@ class Jcart {
 
 		// Display the cart header
 		echo tab(1) . "$errorMessage\n";
-		echo tab(1) . "<form method='post' action='$checkout'>\n";
+		//echo tab(1) . "<form method='post' action='$checkout'>\n";
 		echo tab(2) . "<fieldset>\n";
 		echo tab(3) . "<input type='hidden' name='jcartToken' value='{$_SESSION['jcartToken']}' />\n";
 		echo tab(3) . "<table border='1'>\n";
@@ -523,7 +530,6 @@ class Jcart {
 				$inputType = "image";
 				$src = " src='{$config['button']['checkout']}' alt='{$config['text']['checkout']}' title='' ";
 			}
-			echo tab(7) . "<input type='$inputType'  id='jcart-checkout' name='jcartCheckout' class='jcart-button' value='{$config['text']['checkout']}' />\n";
 		}
 
 		echo tab(7) . "<span id='jcart-subtotal'>{$config['text']['subtotal']}: <strong>$currencySymbol" . number_format($this->subtotal, $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</strong></span>\n";
@@ -601,11 +607,11 @@ class Jcart {
 				$disablePaypalCheckout = " disabled='disabled'";
 			}
 
-			echo tab(3) . "<input type='$inputType' $src id='jcart-paypal-checkout' name='jcartPaypalCheckout' value='{$config['text']['checkoutPaypal']}' $disablePaypalCheckout />\n";
+			//echo tab(3) . "<input type='$inputType' $src id='jcart-paypal-checkout' name='jcartPaypalCheckout' value='{$config['text']['checkoutPaypal']}' $disablePaypalCheckout />\n";
 		}
 
 		echo tab(2) . "</fieldset>\n";
-		echo tab(1) . "</form>\n\n";
+		//echo tab(1) . "</form>\n\n";
 		
 		echo tab(1) . "<div id='jcart-tooltip'></div>\n";
 	}
